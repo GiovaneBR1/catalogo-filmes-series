@@ -7,7 +7,7 @@ O sistema permite cadastrar, consultar e organizar informações sobre filmes e 
 - React
 - Vite
 - Tailwind CSS
-- JavaScript (ES6+)
+- JavaScript 
 - LocalStorage (armazenamento local)
 
 ## Objetivo:
