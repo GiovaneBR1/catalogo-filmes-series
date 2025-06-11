@@ -138,13 +138,14 @@ function Carrossel() {
           return (
             <div key={index} className="px-2 text-center">
               <img
-  src={f.imagem}
-  alt={f.titulo}
-  className="rounded-lg shadow-md h-72 object-cover w-full cursor-pointer"
-  onClick={() => navigate(`/lista?titulo=${encodeURIComponent(f.tituloOMDb)}`)}
-  title="Ver na lista"
-/>
-
+                src={f.imagem}
+                alt={f.titulo}
+                className="rounded-lg shadow-md h-72 object-cover w-full cursor-pointer"
+                onClick={() =>
+                  navigate(`/lista?titulo=${encodeURIComponent(f.tituloOMDb)}`)
+                }
+                title="Ver na lista"
+              />
 
               <p className="mt-2 font-semibold text-white">{f.titulo}</p>
 

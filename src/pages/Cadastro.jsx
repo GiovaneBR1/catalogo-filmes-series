@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Voltar from "../components/Voltar";
 
 function Cadastro() {
   const [titulo, setTitulo] = useState("");
@@ -55,59 +56,62 @@ function Cadastro() {
   };
 
   return (
-    <div className="card-form mt-28 max-w-3xl mx-auto p-6 bg-black/70 backdrop-blur-md shadow-md rounded-lg border border-gray-700">
-      <h2 className="titulo-pagina text-center">Cadastrar Filme/Série</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 relative">
+      {/* Botão Voltar fixo no canto superior esquerdo */}
+      <div className="absolute top-4 left-4 z-10">
+        <Voltar />
+      </div>
+      <div className="w-full max-w-3xl p-6 bg-black/70 backdrop-blur-md shadow-md rounded-lg border border-gray-700 mt-2">
+        <div className="mb-8 flex items-center gap-4">
+          <h2 className="titulo-pagina text-center flex-1">Cadastrar Filme/Série</h2>
+        </div>
+        <form onSubmit={salvarFilme} className="space-y-4">
+          {/* Campo Título + botão API */}
+          <div>
+            <label className="label-form">Título:</label>
+            <div className="flex gap-2 flex-col sm:flex-row">
+              <input
+                type="text"
+                className="input-form flex-1"
+                value={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
+                placeholder="Digite o nome do filme ou série"
+              />
+            </div>
+          </div>
 
-      <form onSubmit={salvarFilme} className="space-y-4">
-        {/* Campo Título + botão API */}
-        <div>
-          <label className="label-form">Título:</label>
-          <div className="flex gap-2 flex-col sm:flex-row">
+          <div>
+            <label className="label-form">Gênero:</label>
             <input
               type="text"
-              className="input-form flex-1"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              placeholder="Digite o nome do filme ou série"
+              className="input-form"
+              value={genero}
+              onChange={(e) => setGenero(e.target.value)}
             />
-          
           </div>
-        </div>
 
-        <div>
-          <label className="label-form">Gênero:</label>
-          <input
-            type="text"
-            className="input-form"
-            value={genero}
-            onChange={(e) => setGenero(e.target.value)}
-          />
-        </div>
+          <div>
+            <label className="label-form">Nota (IMDb):</label>
+            <input
+              type="text"
+              className="input-form"
+              value={nota}
+              onChange={(e) => setNota(e.target.value)}
+            />
+          </div>
 
-        <div>
-          <label className="label-form">Nota (IMDb):</label>
-          <input
-            type="text"
-            className="input-form"
-            value={nota}
-            onChange={(e) => setNota(e.target.value)}
-          />
-        </div>
+          <div>
+            <label className="label-form">Sinopse:</label>
+            <textarea
+              className="textarea-form"
+            ></textarea>
+          </div>
 
-        <div>
-          <label className="label-form">Sinopse:</label>
-          <textarea
-            className="textarea-form"
-            value={sinopse}
-            onChange={(e) => setSinopse(e.target.value)}
-            placeholder="Escreva uma breve sinopse..."
-          ></textarea>
-        </div>
-
-        <button type="submit" className="btn-primario w-full sm:w-auto">
-          Salvar
-        </button>
-      </form>
+          <button type="submit" className="btn-primario w-full sm:w-auto">
+            Salvar
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
