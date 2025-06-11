@@ -75,7 +75,7 @@ function Lista() {
                     ? "ring-2 ring-green-500 opacity-90"
                     : "hover:scale-[1.02]"
                 } ${
-                  index === destaqueIndex
+                  index === destaqueIndex 
                     ? "ring-1 ring-yellow-400 animate-pulse"
                     : ""
                 }`}
