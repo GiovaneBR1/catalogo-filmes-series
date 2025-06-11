@@ -4,7 +4,7 @@ import Carrossel from "../components/Carrosel";
 function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-28 text-center text-white">
-      <h2 className="titulo-pagina text-4xl">🎬 Bem-vindo ao Catálogo de Filmes e Séries</h2>
+      <h2 className="titulo-pagina text-4xl">🎬 Bem-vindo ao CineList</h2>
 
       <p className="texto-claro mt-4 max-w-3xl mx-auto">
         Aqui você pode cadastrar seus filmes e séries favoritas, visualizar uma lista organizada, marcar como assistido e manter seu catálogo pessoal atualizado.
