@@ -57,11 +57,11 @@ function Lista() {
   }, [catalogo, tituloDestacado]);
 
   return (
-    <div className="fixed inset-0 min-h-screen w-full bg-black/80 z-10 overflow-auto">
-      <div className="max-w-6xl mx-auto p-4 mt-24">
-        <h2 className="titulo-pagina">Filmes e Séries Cadastrados</h2>
-        <Voltar />
+    <div className="max-w-6xl mx-auto p-4 mt-24 min-h-screen">
+      <h2 className="titulo-pagina">Filmes e Séries Cadastrados</h2>
+      <Voltar />
 
+      <div className="bg-black/40 rounded-xl shadow-lg p-6 backdrop-blur-md">
         {catalogo.length === 0 ? (
           <p className="text-gray-300">Nenhum item cadastrado ainda.</p>
         ) : (
@@ -70,7 +70,7 @@ function Lista() {
               <div
                 key={index}
                 ref={(el) => (refs.current[index] = el)}
-                className={`bg-black/70 backdrop-blur-md shadow-md rounded-lg p-4 border border-gray-700 relative transition-all ${
+                className={`shadow-md rounded-lg p-4 border border-gray-700 relative transition-all backdrop-blur-md bg-black/60 ${
                   item.assistido
                     ? "ring-2 ring-green-500 opacity-90"
                     : "hover:scale-[1.02]"

@@ -91,7 +91,7 @@ function Cadastro() {
           </div>
 
           <div>
-            <label className="label-form">Nota (IMDb):</label>
+            <label className="label-form">Nota(0 a 10):</label>
             <input
               type="text"
               className="input-form"
@@ -104,6 +104,9 @@ function Cadastro() {
             <label className="label-form">Sinopse:</label>
             <textarea
               className="textarea-form"
+              value={sinopse}
+              onChange={(e) => setSinopse(e.target.value)}
+              placeholder="Escreva uma breve sinopse..."
             ></textarea>
           </div>
 
